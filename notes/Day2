@@ -1,8 +1,6 @@
-React Week - Day 2 -
+React Week // Day 2
 
 Takeaways
 - Use PropTypes
 	- Return Errors instead of flashing errors
 	- use propName and componentName
-
-- 
