@@ -4,3 +4,16 @@ Takeaways
 - Use PropTypes
 	- Return Errors instead of flashing errors
 	- use propName and componentName
+- Use these React Methods
+	- componentWillMount()
+	- componentDidMount()
+	- componentWillUpdate()
+	- componentDidUpdate()
+	- shouldcomponentUpdate()
+	- componentWillReceiveProps()
+	- componentShouldReceiveProps()
+	- getInitialState()
+	- getDefaultProps()
+
+	(Checkout his 'lifestyle' app for the order of all these methods')
+
