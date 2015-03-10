@@ -1,0 +1,19 @@
+{
+  "name": "react-chatroom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevMountain/reactweek-mini2-chatroom"
+  },
+  "author": "Tyler McGinnis",
+  "dependencies": {
+    "jquery": "^2.1.3",
+    "react": "^0.12.2"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.12.2",
+    "webpack": "^1.5.3"
+  }
+}
