@@ -10,7 +10,7 @@ var ListContainer = React.createClass({
     }
   },
   componentDidMount: function(){
-    this.firebaseRef = new Firebase("https://reactweek-todofire.firebaseio.com/todos");
+    this.firebaseRef = new Firebase("https://reacttodolist.firebaseio.com");
     this.firebaseRef.on('child_added', function(snapshot){
       this.setState({
         list: this.state.list.concat([{key: snapshot.key(), val: snapshot.val()}])

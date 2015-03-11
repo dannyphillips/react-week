@@ -4,6 +4,16 @@ var Router = require('react-router');
 
 var Register = React.createClass({
   mixins: [ Router.Navigation ],
+  handleSubmit: function(e){
+    e.preventDefault();
+    var email = this.refs.email.getDOMNode().value;
+    var pw = this.refs.pw.getDOMNode().value;
+    firebaseUtils.createUser({email: email, password: pw}, function(result){
+      if(result){
+        this.replaceWith('home');
+      }
+    }.bind(this));
+  },
   render: function(){
     return (
       <div className="col-sm-6 col-sm-offset-3">
@@ -24,4 +34,3 @@ var Register = React.createClass({
 });
 
 module.exports = Register;
-

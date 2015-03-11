@@ -35,7 +35,7 @@ var NewGameForm = React.createClass({
         incrementWins(firebaseRef, this.props.teamId);
         incrementLosses(firebaseRef, opponentId);
       } else {
-        winOrLose = "Lose";
+        winOrLose = "Lose"
         incrementWins(firebaseRef, opponentId);
         incrementLosses(firebaseRef, this.props.teamId);
       }

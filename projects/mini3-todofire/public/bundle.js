@@ -80,7 +80,7 @@
 	    }
 	  },
 	  componentDidMount: function(){
-	    this.firebaseRef = new Firebase("https://reactweek-todofire.firebaseio.com/todos");
+	    this.firebaseRef = new Firebase("https://reacttodolist.firebaseio.com");
 	    this.firebaseRef.on('child_added', function(snapshot){
 	      this.setState({
 	        list: this.state.list.concat([{key: snapshot.key(), val: snapshot.val()}])
@@ -4478,37 +4478,37 @@
 
 	"use strict";
 
-	var BeforeInputEventPlugin = __webpack_require__(58);
-	var ChangeEventPlugin = __webpack_require__(59);
-	var ClientReactRootIndex = __webpack_require__(60);
-	var CompositionEventPlugin = __webpack_require__(61);
-	var DefaultEventPluginOrder = __webpack_require__(62);
-	var EnterLeaveEventPlugin = __webpack_require__(63);
+	var BeforeInputEventPlugin = __webpack_require__(57);
+	var ChangeEventPlugin = __webpack_require__(58);
+	var ClientReactRootIndex = __webpack_require__(59);
+	var CompositionEventPlugin = __webpack_require__(60);
+	var DefaultEventPluginOrder = __webpack_require__(61);
+	var EnterLeaveEventPlugin = __webpack_require__(62);
 	var ExecutionEnvironment = __webpack_require__(30);
-	var HTMLDOMPropertyConfig = __webpack_require__(64);
-	var MobileSafariClickEventPlugin = __webpack_require__(65);
+	var HTMLDOMPropertyConfig = __webpack_require__(63);
+	var MobileSafariClickEventPlugin = __webpack_require__(64);
 	var ReactBrowserComponentMixin = __webpack_require__(54);
 	var ReactComponentBrowserEnvironment =
-	  __webpack_require__(66);
-	var ReactDefaultBatchingStrategy = __webpack_require__(67);
+	  __webpack_require__(65);
+	var ReactDefaultBatchingStrategy = __webpack_require__(66);
 	var ReactDOMComponent = __webpack_require__(17);
-	var ReactDOMButton = __webpack_require__(68);
-	var ReactDOMForm = __webpack_require__(69);
-	var ReactDOMImg = __webpack_require__(70);
-	var ReactDOMInput = __webpack_require__(71);
-	var ReactDOMOption = __webpack_require__(72);
-	var ReactDOMSelect = __webpack_require__(73);
-	var ReactDOMTextarea = __webpack_require__(74);
-	var ReactEventListener = __webpack_require__(75);
-	var ReactInjection = __webpack_require__(76);
+	var ReactDOMButton = __webpack_require__(67);
+	var ReactDOMForm = __webpack_require__(68);
+	var ReactDOMImg = __webpack_require__(69);
+	var ReactDOMInput = __webpack_require__(70);
+	var ReactDOMOption = __webpack_require__(71);
+	var ReactDOMSelect = __webpack_require__(72);
+	var ReactDOMTextarea = __webpack_require__(73);
+	var ReactEventListener = __webpack_require__(74);
+	var ReactInjection = __webpack_require__(75);
 	var ReactInstanceHandles = __webpack_require__(19);
 	var ReactMount = __webpack_require__(21);
-	var SelectEventPlugin = __webpack_require__(77);
-	var ServerReactRootIndex = __webpack_require__(78);
-	var SimpleEventPlugin = __webpack_require__(79);
-	var SVGDOMPropertyConfig = __webpack_require__(80);
+	var SelectEventPlugin = __webpack_require__(76);
+	var ServerReactRootIndex = __webpack_require__(77);
+	var SimpleEventPlugin = __webpack_require__(78);
+	var SVGDOMPropertyConfig = __webpack_require__(79);
 
-	var createFullPageComponent = __webpack_require__(81);
+	var createFullPageComponent = __webpack_require__(80);
 
 	function inject() {
 	  ReactInjection.EventEmitter.injectReactEventListener(
@@ -4581,7 +4581,7 @@
 	  if ("production" !== process.env.NODE_ENV) {
 	    var url = (ExecutionEnvironment.canUseDOM && window.location.href) || '';
 	    if ((/[?&]react_perf\b/).test(url)) {
-	      var ReactDefaultPerf = __webpack_require__(82);
+	      var ReactDefaultPerf = __webpack_require__(81);
 	      ReactDefaultPerf.start();
 	    }
 	  }
@@ -4611,7 +4611,7 @@
 
 	"use strict";
 
-	var ReactRootIndex = __webpack_require__(57);
+	var ReactRootIndex = __webpack_require__(82);
 
 	var invariant = __webpack_require__(37);
 
@@ -6422,7 +6422,7 @@
 	var ReactPropTypeLocationNames = __webpack_require__(47);
 
 	var deprecated = __webpack_require__(28);
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 
 	/**
 	 * Collection of methods that allow declaration and validation of props that are
@@ -6778,9 +6778,9 @@
 
 	var ReactElement = __webpack_require__(14);
 	var ReactInstanceHandles = __webpack_require__(19);
-	var ReactMarkupChecksum = __webpack_require__(88);
+	var ReactMarkupChecksum = __webpack_require__(87);
 	var ReactServerRenderingTransaction =
-	  __webpack_require__(89);
+	  __webpack_require__(88);
 
 	var instantiateReactComponent = __webpack_require__(48);
 	var invariant = __webpack_require__(37);
@@ -7615,7 +7615,7 @@
 
 	"use strict";
 
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 
 	/**
 	 * Similar to invariant but only logs a warning if the condition is not met.
@@ -8731,7 +8731,7 @@
 	"use strict";
 
 	var assign = __webpack_require__(27);
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 	var invariant = __webpack_require__(37);
 	var joinClasses = __webpack_require__(93);
 	var warning = __webpack_require__(35);
@@ -9852,41 +9852,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactRootIndex
-	 * @typechecks
-	 */
-
-	"use strict";
-
-	var ReactRootIndexInjection = {
-	  /**
-	   * @param {function} _createReactRootIndex
-	   */
-	  injectCreateReactRootIndex: function(_createReactRootIndex) {
-	    ReactRootIndex.createReactRootIndex = _createReactRootIndex;
-	  }
-	};
-
-	var ReactRootIndex = {
-	  createReactRootIndex: null,
-	  injection: ReactRootIndexInjection
-	};
-
-	module.exports = ReactRootIndex;
-
-
-/***/ },
-/* 58 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
 	 * Copyright 2013 Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -10109,7 +10074,7 @@
 
 
 /***/ },
-/* 59 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10495,7 +10460,7 @@
 
 
 /***/ },
-/* 60 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10524,7 +10489,7 @@
 
 
 /***/ },
-/* 61 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10787,7 +10752,7 @@
 
 
 /***/ },
-/* 62 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10831,7 +10796,7 @@
 
 
 /***/ },
-/* 63 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10975,7 +10940,7 @@
 
 
 /***/ },
-/* 64 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11171,7 +11136,7 @@
 
 
 /***/ },
-/* 65 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11190,7 +11155,7 @@
 
 	var EventConstants = __webpack_require__(36);
 
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -11233,7 +11198,7 @@
 
 
 /***/ },
-/* 66 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -11252,7 +11217,7 @@
 	"use strict";
 
 	var ReactDOMIDOperations = __webpack_require__(111);
-	var ReactMarkupChecksum = __webpack_require__(88);
+	var ReactMarkupChecksum = __webpack_require__(87);
 	var ReactMount = __webpack_require__(21);
 	var ReactPerf = __webpack_require__(23);
 	var ReactReconcileTransaction = __webpack_require__(112);
@@ -11358,7 +11323,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
 
 /***/ },
-/* 67 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11378,7 +11343,7 @@
 	var Transaction = __webpack_require__(92);
 
 	var assign = __webpack_require__(27);
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 
 	var RESET_BATCHED_UPDATES = {
 	  initialize: emptyFunction,
@@ -11435,7 +11400,7 @@
 
 
 /***/ },
-/* 68 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11504,7 +11469,7 @@
 
 
 /***/ },
-/* 69 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11558,7 +11523,7 @@
 
 
 /***/ },
-/* 70 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11610,7 +11575,7 @@
 
 
 /***/ },
-/* 71 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -11791,7 +11756,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
 
 /***/ },
-/* 72 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -11847,7 +11812,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
 
 /***/ },
-/* 73 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -12035,7 +12000,7 @@
 
 
 /***/ },
-/* 74 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -12179,7 +12144,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
 
 /***/ },
-/* 75 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -12367,7 +12332,7 @@
 
 
 /***/ },
-/* 76 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -12391,7 +12356,7 @@
 	var ReactBrowserEventEmitter = __webpack_require__(55);
 	var ReactNativeComponent = __webpack_require__(94);
 	var ReactPerf = __webpack_require__(23);
-	var ReactRootIndex = __webpack_require__(57);
+	var ReactRootIndex = __webpack_require__(82);
 	var ReactUpdates = __webpack_require__(41);
 
 	var ReactInjection = {
@@ -12411,7 +12376,7 @@
 
 
 /***/ },
-/* 77 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -12610,7 +12575,7 @@
 
 
 /***/ },
-/* 78 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -12645,7 +12610,7 @@
 
 
 /***/ },
-/* 79 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -13076,7 +13041,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
 
 /***/ },
-/* 80 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13172,7 +13137,7 @@
 
 
 /***/ },
-/* 81 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -13236,7 +13201,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
 
 /***/ },
-/* 82 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13500,6 +13465,41 @@
 
 
 /***/ },
+/* 82 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactRootIndex
+	 * @typechecks
+	 */
+
+	"use strict";
+
+	var ReactRootIndexInjection = {
+	  /**
+	   * @param {function} _createReactRootIndex
+	   */
+	  injectCreateReactRootIndex: function(_createReactRootIndex) {
+	    ReactRootIndex.createReactRootIndex = _createReactRootIndex;
+	  }
+	};
+
+	var ReactRootIndex = {
+	  createReactRootIndex: null,
+	  injection: ReactRootIndexInjection
+	};
+
+	module.exports = ReactRootIndex;
+
+
+/***/ },
 /* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -13707,44 +13707,6 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule emptyFunction
-	 */
-
-	function makeEmptyFunction(arg) {
-	  return function() {
-	    return arg;
-	  };
-	}
-
-	/**
-	 * This function accepts and discards inputs; it has no side effects. This is
-	 * primarily useful idiomatically for overridable function endpoints which
-	 * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
-	 */
-	function emptyFunction() {}
-
-	emptyFunction.thatReturns = makeEmptyFunction;
-	emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-	emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-	emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-	emptyFunction.thatReturnsThis = function() { return this; };
-	emptyFunction.thatReturnsArgument = function(arg) { return arg; };
-
-	module.exports = emptyFunction;
-
-
-/***/ },
-/* 88 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
 	 * @providesModule ReactMarkupChecksum
 	 */
 
@@ -13786,7 +13748,7 @@
 
 
 /***/ },
-/* 89 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13809,7 +13771,7 @@
 	var Transaction = __webpack_require__(92);
 
 	var assign = __webpack_require__(27);
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 
 	/**
 	 * Provides a `CallbackQueue` queue for collecting `onDOMReady` callbacks
@@ -13900,6 +13862,44 @@
 	PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 	module.exports = ReactServerRenderingTransaction;
+
+
+/***/ },
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule emptyFunction
+	 */
+
+	function makeEmptyFunction(arg) {
+	  return function() {
+	    return arg;
+	  };
+	}
+
+	/**
+	 * This function accepts and discards inputs; it has no side effects. This is
+	 * primarily useful idiomatically for overridable function endpoints which
+	 * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+	 */
+	function emptyFunction() {}
+
+	emptyFunction.thatReturns = makeEmptyFunction;
+	emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+	emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+	emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+	emptyFunction.thatReturnsThis = function() { return this; };
+	emptyFunction.thatReturnsArgument = function(arg) { return arg; };
+
+	module.exports = emptyFunction;
 
 
 /***/ },
@@ -15542,7 +15542,7 @@
 	var PooledClass = __webpack_require__(38);
 
 	var assign = __webpack_require__(27);
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 	var getEventTarget = __webpack_require__(118);
 
 	/**
@@ -16766,7 +16766,7 @@
 	 * @typechecks
 	 */
 
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 
 	/**
 	 * Upstream version of event listener. Does not take into account specific
@@ -18758,7 +18758,7 @@
 	var ExecutionEnvironment = __webpack_require__(30);
 
 	var createNodesFromMarkup = __webpack_require__(148);
-	var emptyFunction = __webpack_require__(87);
+	var emptyFunction = __webpack_require__(89);
 	var getMarkupWrap = __webpack_require__(149);
 	var invariant = __webpack_require__(37);
 

@@ -10,16 +10,24 @@ var Main = React.createClass({
       loggedIn: firebaseUtils.isLoggedIn()
     }
   },
-  handleChange: function(loggedIn){
+  handleLogout: function(loggedIn){
     this.setState({
       loggedIn: loggedIn
     });
   },
   componentWillMount: function(){
-    firebaseUtils.onChange = this.handleChange;
+    firebaseUtils.onChange = this.handleLogout;
   },
   render: function(){
-    /* Code Here */
+    var loginOrOut;
+    var register;
+    if(this.state.loggedIn){
+      loginOrOut = <li><Link to="logout" className="navbar-brand">Logout</Link></li>;
+      register = null
+    } else {
+      loginOrOut = <li><Link to="login" className="navbar-brand">Login</Link></li>;
+      register = <li><Link to="register" className="navbar-brand"> Register </Link></li>;
+    }
     return (
       <span>
         <nav className="navbar navbar-default navbar-static-top">
