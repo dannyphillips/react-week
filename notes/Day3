@@ -1,0 +1,10 @@
+React Weeek // Day 3
+
+Takeaways
+- use event.preventDefault();
+- use event.target.reset();
+
+to Remove
+- this.firebaseRef.child.remove();
+
+
