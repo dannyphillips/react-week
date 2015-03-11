@@ -4,17 +4,17 @@ Takeaways
 - use event.preventDefault();
 - use event.target.reset();
 
-----:FIREBASE----
+----FIREBASE----
 to Remove
 - this.firebaseRef.child.remove();
 
 Firebase is really fast!
 
 
-Authentication
+----Authentication----
 - localStorage
 
-React-Router
+----React-Router----
 = { Route, RouteHandler } = require('react-router');
 
 var routes = ( 

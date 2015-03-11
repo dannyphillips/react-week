@@ -14,7 +14,7 @@ Takeaways
 	- componentShouldReceiveProps()
 	- getInitialState()
 	- getDefaultProps()
-
-	(Checkout his 'lifestyle' & 'magicmove' apps for the order of all these methods')
+	
+- (Checkout his 'lifestyle' & 'magicmove' apps for the order of all these methods);
 
 - Mixins are going to be no longer supported (FYI) 
