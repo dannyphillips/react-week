@@ -1,11 +1,19 @@
 {
-  "name": "mini3-todofire",
+  "name": "mini1-todolist",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevMountain/reactweek-mini1-todolist"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Tyler McGinnis",
+  "dependencies": {
+    "firebase": "^2.2.0",
+    "react": "^0.12.2"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.12.2",
+    "webpack": "^1.5.3"
+  }
 }
