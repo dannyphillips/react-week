@@ -4,7 +4,12 @@ Takeaways
 - use event.preventDefault();
 - use event.target.reset();
 
+----:FIREBASE----
 to Remove
 - this.firebaseRef.child.remove();
 
+Firebase is really fast!
 
+
+Authentication
+- 
