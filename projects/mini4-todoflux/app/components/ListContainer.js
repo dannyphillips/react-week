@@ -1,23 +1,30 @@
 var React = require('react');
 var AddItem = require('./AddItem');
 var List = require('./List');
+var todoStore = require('../stores/todoStore');
+var todoActions = require('../actions/todoActions');
 
 var ListContainer = React.createClass({
   getInitialState: function(){
     return {
-      list: []
+      list: todoStore.getList()
     }
   },
+  componentDidMount: function(){
+    todoStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function(){
+    todoStore.removeChangeListener(this._onChange);
+  },
   handleAddItem: function(newItem){
-    this.setState({
-      list: this.state.list.concat([newItem])
-    });
+    todoActions.addItem(newItem);
   },
   handleRemoveItem: function(index){
-    var newList = this.state.list;
-    newList.splice(index, 1);
+    todoActions.removeItem(index);
+  },
+  _onChange: function(){
     this.setState({
-      list: newList
+      list: todoStore.getList()
     })
   },
   render: function(){
@@ -29,7 +36,6 @@ var ListContainer = React.createClass({
           <List items={this.state.list} remove={this.handleRemoveItem}/>
         </div>
       </div>
-
     )
   }
 });
