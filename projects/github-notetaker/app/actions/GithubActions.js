@@ -1,5 +1,3 @@
-//Remove File
-
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var appConstants = require('../constants/appConstants');
 var githubUtils = require('../utils/githubUtils');

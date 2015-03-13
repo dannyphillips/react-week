@@ -1,5 +1,3 @@
-//remove file
-
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var appConstants = require('../constants/appConstants');
 var firebaseUtils = require('../utils/firebaseUtils');

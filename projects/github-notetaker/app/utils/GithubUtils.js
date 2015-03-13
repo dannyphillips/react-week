@@ -1,8 +1,8 @@
 var appConstants = require('../constants/appConstants');
 var axios = require('axios');
 
-var id = "YOUR_CLIENT_ID_HERE";
-var sec = "YOUR_SECRET_ID_HERE";
+var id = "CLIENT_ID_HERE";
+var sec = "CLIENT_SECRET_HERE";
 var param = "?client_id=" + id + "&client_secret=" + sec;
 
 var githubUtils = {
