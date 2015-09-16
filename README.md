@@ -1,3 +1,3 @@
-# ReactWeek
-Collection of ReactWeek lectures and projects
+# ReactWeek 2015
+Collection of ReactWeek 2015 lectures and projects
 
